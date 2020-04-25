@@ -1,0 +1,21 @@
+.git
+.idea
+.DS_Store
+.gitignore
+CHANGELOG.md
+README.md
+LICENSE.md
+env.*
+logs/
+
+# Docker files
+.dockerignore
+Dockerfile
+Dockerfile-dev
+Dockerfile-prod
+docker-compose.yml
+
+# To prevent storing dev/temporary container data
+*.csv
+/tmp/*
+
