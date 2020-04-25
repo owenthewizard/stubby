@@ -9,8 +9,7 @@ preconfigured for DNS-over-TLS (DoT) using Cloudflare.
 #### Default Config (IPv4, IPv6, DoT via Cloudflare)
 
 ```bash
-docker run --init -d --restart=unless-stopped --name=stubby -p 53:5300/tcp -p 53:5300/udp 
-owenthewizard/stubby
+docker run --init -d --restart=unless-stopped --name=stubby -p 53:5300/tcp -p 53:5300/udp owenthewizard/stubby
 dig +short @127.0.0.1 gnu.org # it works!
 ```
 
@@ -19,7 +18,7 @@ dig +short @127.0.0.1 gnu.org # it works!
 ```bash
 mkdir ~/stubby-config
 vim ~/stubby-config/stubby.yml # Make your config
-docker run --init -d --restart=unless-stopped --name=stubby -p 53:5300/tcp -p 53:5300/udp -v ~/stubby-config:/config:ro -e STUBBY_CONFIG=/config/stubby.yml # change 5300 to your port
+docker run --init -d --restart=unless-stopped --name=stubby -p 53:5300/tcp -p 53:5300/udp -v ~/stubby-config:/config:ro -e STUBBY_CONFIG=/config/stubby.yml owenthewizard/stubby # change 5300 to your port
 ```
 
 ## Coding Style
