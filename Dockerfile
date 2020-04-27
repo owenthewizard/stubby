@@ -75,8 +75,7 @@ ENV STUBBY_ARGS ""
 EXPOSE 5300
 
 HEALTHCHECK --interval=1m --timeout=10s --start-period=5s --retries=2 \
-    CMD nslookup ${HEALTHCHECK_DOMAIN} 127.0.0.1:5300 && \
-        nslookup ${HEALTHCHECK_DOMAIN} ::1:5300
+    CMD nslookup ${HEALTHCHECK_DOMAIN} 127.0.0.1:5300
 
 ENTRYPOINT stubby -v ${LOG_LEVEL} -C ${STUBBY_CONFIG} ${STUBBY_ARGS}
 
